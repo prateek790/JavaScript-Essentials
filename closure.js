@@ -16,19 +16,19 @@
 // counter();
 // counter();
 
-let globalVar = "Global";            // 1. Global scope
+// let globalVar = "Global";            // 1. Global scope
 
-function outer() {
-  let outerVar = "Outer";            // 2. Lexical (parent) scope
+// function outer() {
+//   let outerVar = "Outer";            // 2. Lexical (parent) scope
 
-  return function inner() {
-    let innerVar = "Inner";          // 3. Local scope
-    console.log(globalVar, outerVar, innerVar);
-  };
-}
+//   return function inner() {
+//     let innerVar = "Inner";          // 3. Local scope
+//     console.log(globalVar, outerVar, innerVar);
+//   };
+// }
 
-const fn = outer();
-fn(); // Global Outer Inner
+// const fn = outer();
+// fn(); // Global Outer Inner
 
 
 // A closure is a combination of a function and its lexical environment. 
@@ -73,3 +73,21 @@ account.deposit(500);
 account.withdraw(10);
 
 console.log(account.getBalance());
+
+// example 1 with var
+for(var i = 1; i<=3;i++){
+    setTimeout(function () {
+        console.log(i);
+    },1000);
+}
+
+
+// example 2 with let
+
+for(let i = 1; i<=3; i++){
+    setTimeout(function () {
+        console.log(i);
+    },1000);
+}
+
+
